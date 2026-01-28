@@ -1,6 +1,7 @@
 extends Node2D
 
 var meteor_scene: PackedScene = load("res://scenes/meteor.tscn")
+var laser_scene: PackedScene = load("res://scenes/laser.tscn")
 
 func _on_meteor_timer_timeout() -> void:
 	var meteor = meteor_scene.instantiate()
@@ -8,5 +9,8 @@ func _on_meteor_timer_timeout() -> void:
 	$Meteors.add_child(meteor)
 
 
-func _on_player_laser() -> void:
-	pass # Replace with function body.
+func _on_player_laser(pos) -> void:
+	var laser = laser_scene.instantiate()
+	
+	$Lasers.add_child(laser)
+	laser.position = pos
