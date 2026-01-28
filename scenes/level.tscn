@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cbyp1xwa5d3e1"]
+
+[ext_resource type="Script" uid="uid://dyys16d60e4g2" path="res://scenes/level.gd" id="1_mx8sn"]
+[ext_resource type="Texture2D" uid="uid://canqsbf3t4lwf" path="res://Foozle_2DS0015_Void_EnvironmentPack/Backgrounds/PNGs/Condesed/Starry background  - Layer 01 - Void.png" id="1_w8frs"]
+[ext_resource type="PackedScene" uid="uid://wps0hpecyxnr" path="res://scenes/player.tscn" id="2_mx8sn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8frs"]
+size = Vector2(267.035, 1456)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mx8sn"]
+size = Vector2(2191, 100)
+
+[node name="Level" type="Node2D" unique_id=1104061157]
+script = ExtResource("1_mx8sn")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1666772612]
+position = Vector2(-16, 359.00003)
+scale = Vector2(1, 2)
+texture = ExtResource("1_w8frs")
+
+[node name="Player" parent="." unique_id=136095889 instance=ExtResource("2_mx8sn")]
+
+[node name="Borders" type="Node2D" parent="." unique_id=1958886790]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Borders" unique_id=581320159]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=442958529]
+position = Vector2(1362, 382)
+shape = SubResource("RectangleShape2D_w8frs")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Borders" unique_id=211670633]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D2" unique_id=1229988839]
+position = Vector2(-84, 372)
+shape = SubResource("RectangleShape2D_w8frs")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Borders" unique_id=1384988921]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D3" unique_id=740514827]
+position = Vector2(615, 2)
+shape = SubResource("RectangleShape2D_mx8sn")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Borders" unique_id=291964193]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D4" unique_id=34585304]
+position = Vector2(630, 725)
+shape = SubResource("RectangleShape2D_mx8sn")
+
+[node name="MeteorTimer" type="Timer" parent="." unique_id=935601040]
+wait_time = 0.25
+autostart = true
+
+[node name="Meteors" type="Node2D" parent="." unique_id=1649046491]
+
+[connection signal="timeout" from="MeteorTimer" to="." method="_on_meteor_timer_timeout"]

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://h5awh74k7677"]
+
+[ext_resource type="Texture2D" uid="uid://chyye0vypuyue" path="res://Laser Sprites/09.png" id="1_xmihv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a7dhc"]
+radius = 9.0
+
+[node name="Laser" type="Area2D" unique_id=720105756]
+
+[node name="09" type="Sprite2D" parent="." unique_id=2015940199]
+rotation = -1.5707964
+texture = ExtResource("1_xmihv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1511792936]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_a7dhc")
