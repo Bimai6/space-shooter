@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dn1vdyt00eyk8"]
+
+[ext_resource type="FontFile" uid="uid://qm1qnlsdk13a" path="res://fonts/Vipnagorgialla Bd.otf" id="1_nt7q6"]
+[ext_resource type="Texture2D" uid="uid://bpjiinyigw7ak" path="res://Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Damaged.png" id="2_x4jx1"]
+
+[node name="UI" type="CanvasLayer" unique_id=1137377781]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=583699334]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 10
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=91712604]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_nt7q6")
+theme_override_font_sizes/font_size = 50
+text = "1235"
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=277104818]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2" unique_id=1989763129]
+layout_mode = 2
+theme_override_constants/separation = -10
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2/HBoxContainer" unique_id=439735560]
+layout_mode = 2
+texture = ExtResource("2_x4jx1")
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer2/HBoxContainer" unique_id=708055807]
+layout_mode = 2
+texture = ExtResource("2_x4jx1")
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer2/HBoxContainer" unique_id=334425608]
+layout_mode = 2
+texture = ExtResource("2_x4jx1")
+
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer2/HBoxContainer" unique_id=1028526907]
+layout_mode = 2
+texture = ExtResource("2_x4jx1")
+
+[node name="TextureRect5" type="TextureRect" parent="MarginContainer2/HBoxContainer" unique_id=633424177]
+layout_mode = 2
+texture = ExtResource("2_x4jx1")
