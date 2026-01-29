@@ -179,30 +179,32 @@ frame = 2
 frame_progress = 0.063983314
 
 [node name="Player" parent="." unique_id=136095889 instance=ExtResource("2_mx8sn")]
-collision_layer = 4
-collision_mask = 1
 
 [node name="Borders" type="Node2D" parent="." unique_id=1958886790]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Borders" unique_id=581320159]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=442958529]
 position = Vector2(1362, 382)
 shape = SubResource("RectangleShape2D_w8frs")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Borders" unique_id=211670633]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D2" unique_id=1229988839]
 position = Vector2(-84, 372)
 shape = SubResource("RectangleShape2D_w8frs")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Borders" unique_id=1384988921]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D3" unique_id=740514827]
 position = Vector2(615, 2)
 shape = SubResource("RectangleShape2D_mx8sn")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Borders" unique_id=291964193]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D4" unique_id=34585304]
 position = Vector2(630, 725)
