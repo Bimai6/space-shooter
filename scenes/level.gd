@@ -8,6 +8,8 @@ var health: int = 3
 func _ready() -> void:
 	get_tree().call_group('ui', 'get_health', health)
 	
+	$Music.play()
+	
 	var size := get_viewport().get_visible_rect().size
 	var rng := RandomNumberGenerator.new()
 	
@@ -15,7 +17,7 @@ func _ready() -> void:
 		var random_x = rng.randf_range(0, size.x - 10)
 		var random_y = rng.randf_range(0, size.y - 10)
 		star.position = Vector2(random_x, random_y)
-		
+		 
 		var random_scale = rng.randf_range(1,2)
 		star.scale = Vector2(random_scale, random_scale)
 		
@@ -31,6 +33,7 @@ func _on_meteor_timer_timeout() -> void:
 func _on_meteor_collision() -> void:
 	health -= 1
 	get_tree().call_group('ui', 'set_health', health)
+	$Player.play_collision_sound()
 	if health <= 0:
 		call_deferred("_game_over")
 

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dbiwkcjbs30lr" path="res://scenes/game_over.gd" id="1_wqhvx"]
 [ext_resource type="FontFile" uid="uid://qm1qnlsdk13a" path="res://fonts/Vipnagorgialla Bd.otf" id="1_xeevv"]
+[ext_resource type="AudioStream" uid="uid://dwy2j2yqheo32" path="res://sounds/Smooth Sailing.mp3" id="3_tbwuq"]
 
 [node name="GameOver" type="Control" unique_id=135643535]
 layout_mode = 3
@@ -64,3 +65,8 @@ theme_override_constants/margin_bottom = 20
 [node name="Label" type="Label" parent="MarginContainer" unique_id=1252556774]
 layout_mode = 2
 text = "Press start to restart"
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1606819909]
+stream = ExtResource("3_tbwuq")
+volume_db = -18.571
+autoplay = true

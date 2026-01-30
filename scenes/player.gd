@@ -19,6 +19,10 @@ func _process(_delta: float) -> void:
 		laser.emit($LaserStartPosition.global_position)
 		can_shoot = false
 		$ShootCooldown.start()
+		$LaserSound.play()
 
 func _on_shoot_cooldown_timeout() -> void:
 	can_shoot = true
+	
+func play_collision_sound():
+	$DamageSound.play()

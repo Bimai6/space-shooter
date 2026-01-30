@@ -4,6 +4,8 @@ var rng := RandomNumberGenerator.new()
 var speed = rng.randi_range(300, 800)
 var direction_x = rng.randf_range(-0.6, 0.6)
 
+var can_collide := true
+
 signal collision
 
 func _ready() -> void:	
@@ -21,8 +23,13 @@ func _process(delta: float) -> void:
 	rotation += rotate_rng * delta
 	
 func _on_body_entered(_body: Node2D) -> void:
-	collision.emit()
+	if can_collide:
+		collision.emit()
 	
 func _on_area_entered(area: Area2D) -> void:
 	area.queue_free()
+	$ExplosionSound.play()
+	$MeteorSprite.hide()
+	$CollisionShape2D.set_deferred("disabled", true)
+	await get_tree().create_timer(1).timeout
 	queue_free()

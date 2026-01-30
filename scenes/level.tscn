@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://wps0hpecyxnr" path="res://scenes/player.tscn" id="2_mx8sn"]
 [ext_resource type="Texture2D" uid="uid://bwiiqfyk4m2cs" path="res://S001_nyknck.png" id="3_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://dn1vdyt00eyk8" path="res://scenes/ui.tscn" id="5_ppgk2"]
+[ext_resource type="AudioStream" uid="uid://sqrxs5v0yfc4" path="res://sounds/Parabola.mp3" id="6_2r41h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ppgk2"]
 atlas = ExtResource("3_mx8sn")
@@ -219,6 +220,10 @@ autostart = true
 [node name="Lasers" type="Node2D" parent="." unique_id=1650484024]
 
 [node name="UI" parent="." unique_id=1137377781 instance=ExtResource("5_ppgk2")]
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=125237145]
+stream = ExtResource("6_2r41h")
+volume_db = -16.236
 
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]
 [connection signal="timeout" from="MeteorTimer" to="." method="_on_meteor_timer_timeout"]
