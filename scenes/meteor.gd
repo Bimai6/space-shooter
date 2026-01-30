@@ -27,9 +27,17 @@ func _on_body_entered(_body: Node2D) -> void:
 		collision.emit()
 	
 func _on_area_entered(area: Area2D) -> void:
+	if not can_collide:
+		return
+
+	can_collide = false
+	
 	area.queue_free()
+	Global.add_score(20) 
+	
 	$ExplosionSound.play()
 	$MeteorSprite.hide()
 	$CollisionShape2D.set_deferred("disabled", true)
+
 	await get_tree().create_timer(1).timeout
 	queue_free()
